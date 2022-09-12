@@ -63,7 +63,7 @@ export default class CmsField extends React.Component<CmsFieldProperties, CmsFie
             const dialogOptions: DialogProperties = {
                 title: 'Brandfolder picker',
                 url: './dialog',
-                size: DialogSize.Large,
+                size: DialogSize.Medium,
                 value: JSON.stringify(this.state.items)
             };
 
