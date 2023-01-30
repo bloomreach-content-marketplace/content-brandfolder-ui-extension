@@ -46,6 +46,7 @@ export interface BfObject {
 export interface UiConfig {
     apiKey: string
     dataMode: 'single' | 'multiple'
+    height?: string
 }
 
 export const itemData: BfObject[] = [

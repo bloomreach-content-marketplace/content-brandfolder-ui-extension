@@ -7,6 +7,7 @@ interface CmsDialogState {
     items: Array<BfObject>
     singleSelect: boolean
     apiKey: string
+    height?: string
 }
 
 interface CmsDialogProperties {
@@ -23,7 +24,8 @@ export default class CmsDialog extends React.Component<CmsDialogProperties, CmsD
         this.state = {
             items: [],
             singleSelect: config.dataMode === 'single',
-            apiKey: config.apiKey
+            apiKey: config.apiKey,
+            height: config.height
         }
 
     }
@@ -46,12 +48,12 @@ export default class CmsDialog extends React.Component<CmsDialogProperties, CmsD
 
 
     render() {
-        const {items, singleSelect, apiKey} = this.state;
+        const {items, singleSelect, apiKey, height} = this.state;
         return (
-            <UiDialog key={items.length} items={items}
+            <UiDialog height={height} key={items.length} items={items}
                       dataMode={singleSelect ? 'single' : 'multiple'}
                       apiKey={apiKey} onOk={items => {
-                          console.log('onOk', items)
+                console.log('onOk', items)
                 this.props.ui.dialog.close(items)
             }}/>);
     }
